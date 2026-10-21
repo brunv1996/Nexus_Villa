@@ -1,0 +1,566 @@
+html {
+    scroll-behavior: smooth;
+}
+/* 1. AS CORES DO MANUAL DE NORMAS */
+:root {
+    --ciano-neon: #00F0FF;
+    --roxo-neon: #BF00FF;
+    --branco-puro: #FFFFFF;
+    --slate-silver: #8A99AD;
+    --preto-grafite: #0F1216;
+}
+
+/* 2. LIMPEZA DE "LIXO" DO BROWSER */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. BASE DA PÁGINA (Fundo e Letra) */
+body {
+    background-color: var(--preto-grafite);
+    color: var(--slate-silver);
+    font-family: 'Inter', sans-serif;
+}
+
+/* 4. TÍTULOS (Rajdhani) */
+h1, h2, h3, .logo {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--branco-puro);
+    text-transform: uppercase;
+}
+
+/* 5. ÁREA HERO E CARROSSEL */
+#hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Esconde tudo o que sair fora das margens */
+}
+
+/* As configurações das imagens de fundo */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Começam todas invisíveis */
+    animation: fadeCarrossel 15s infinite; /* A animação dura 15s num ciclo infinito */
+    z-index: 1; /* Ficam na camada de trás */
+}
+
+/* Ligar cada slide à sua fotografia e definir o atraso (quando entram em cena) */
+.bg-1 { background-image: url('foto1.jpg'); animation-delay: 0s; }
+.bg-2 { background-image: url('foto2.jpg'); animation-delay: 5s; }
+.bg-3 { background-image: url('foto3.jpg'); animation-delay: 10s; }
+
+/* A regra matemática da animação de transparência */
+@keyframes fadeCarrossel {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* A Película Escura para garantir o contraste do texto Branco */
+.bg-pelicula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 18, 22, 0.4) 0%, rgba(15, 18, 22, 0.95) 100%);
+    z-index: 2; /* Fica em cima das fotos */
+}
+
+/* O aglomerado do teu Logótipo e Texto */
+.hero-conteudo {
+    position: relative;
+    z-index: 3; /* Fica na camada principal do ecrã, acima da película */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 700px; /* Alarga um pouco o texto para não ficar tão amontoado */
+    margin-top: 10px;
+    margin-bottom: 40px;
+    line-height: 1.6; /* Dá mais espaço entre as linhas do texto */
+}
+
+/* 6. BOTÃO NÉON */
+.btn-neon {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: var(--ciano-neon);
+    border: 2px solid var(--ciano-neon);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-neon:hover {
+    background-color: var(--ciano-neon);
+    color: var(--preto-grafite);
+    box-shadow: 0 0 15px var(--ciano-neon);
+}
+.logo-marca {
+    height: 120px; /* Aumenta este valor (ex: 100px ou 120px) até ficar perfeito no teu ecrã */
+    width: auto; /* Deixa a largura ajustar sozinha para não distorcer o vetor */
+    filter: drop-shadow(0px 0px 8px var(--ciano-neon)); /* Mantém o brilho leve */
+}
+/* 7. CABEÇALHO E REGRAS DO LOGÓTIPO */
+#cabecalho {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: transparent; /* Garante que não há barra sólida */
+    z-index: 10; /* Obriga o logótipo a ficar na camada da frente */
+}
+
+/* LOGÓTIPO CENTRALIZADO NO HERO */
+.logo-centro {
+    height: 250px; /* Aumentado para ganhar presença no ecrã */
+    width: auto;
+    margin-bottom: 15px; /* Mais espaço para o título respirar */
+    filter: drop-shadow(0px 0px 15px var(--ciano-neon));
+}
+/* 6. SECÇÃO DE PARCEIROS E SPONSORS */
+#parceiros {
+    background-color: var(--preto-grafite);
+    padding: 60px 20px;
+    text-align: center;
+    /* Linha subtil na parte inferior para separar da próxima secção, usando a tua cor Slate Silver com 10% de opacidade */
+    border-bottom: 1px solid rgba(138, 153, 173, 0.1); 
+}
+
+#parceiros h2 {
+    font-size: 1.1rem;
+    color: var(--slate-silver);
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.grelha-parceiros {
+    display: flex;
+    justify-content: center; /* Centra tudo horizontalmente */
+    align-items: center; /* Alinha o eixo vertical dos logótipos */
+    gap: 60px; /* O espaço exato entre cada marca */
+    flex-wrap: wrap; /* Regra de ouro: se não houver espaço, quebra a linha */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-sponsor {
+    height: 40px; 
+    width: auto;
+    
+    /* O truque: brightness(0) tira a cor original, invert(1) passa de preto a branco. A opacidade a 40% deixa-os subtis */
+    filter: brightness(0) invert(1) opacity(40%);
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+
+/* Estado Hover: O momento em que o rato passa por cima */
+.logo-sponsor:hover {
+    /* A opacidade sobe para 100% (branco puro) e ganha o brilho da tua identidade */
+    filter: brightness(0) invert(1) opacity(100%) drop-shadow(0px 0px 10px rgba(0, 240, 255, 0.6)); 
+    transform: scale(1.05); 
+}
+/* 7. SECÇÃO INFRAESTRUTURAS (CSS Grid) */
+#infraestruturas {
+    padding: 100px 20px;
+    /* Um tom ligeiramente mais claro que o grafite para separar visualmente a secção */
+    background-color: #15191f; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-seccao {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--branco-puro);
+    margin-bottom: 60px;
+}
+
+.grelha-cards {
+    display: grid;
+    /* Força exatamente 3 colunas em ecrãs grandes (3 x 2 = 6 cartões perfeitos) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* Responsivo: Ajusta sozinho em tablets e telemóveis para não esmagar o texto */
+@media (max-width: 992px) {
+    .grelha-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grelha-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background-color: var(--preto-grafite);
+    padding: 40px 30px;
+    border-radius: 8px; /* Cantos ligeiramente arredondados */
+    text-align: center;
+    border: 1px solid rgba(138, 153, 173, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Interação Premium ao passar o rato */
+.card:hover {
+    border-color: var(--ciano-neon);
+    transform: translateY(-5px); /* O cartão "levanta" */
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.05); /* Sombra suave a ciano */
+}
+
+.icon-card {
+    height: 50px;
+    margin-bottom: 20px;
+    /* Assumindo que exportas os ícones a branco, este filtro dá-lhes a cor Ciano Néon e o brilho */
+    filter: invert(72%) sepia(50%) saturate(6000%) hue-rotate(140deg) drop-shadow(0px 0px 8px var(--ciano-neon));
+}
+
+.card h3 {
+    color: var(--branco-puro);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--slate-silver);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.icon-codigo {
+    font-size: 50px; /* Tamanho do ícone */
+    color: var(--ciano-neon); /* Cor exata do teu manual */
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 240, 255, 0.5)); /* O brilho néon */
+}
+/* 8. SECÇÃO DE PACOTES */
+#pacotes {
+    padding: 100px 20px;
+    background-color: var(--preto-grafite);
+}
+
+.subtitulo-seccao {
+    text-align: center;
+    color: var(--slate-silver);
+    margin-top: -40px;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+}
+
+.grelha-pacotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: center; /* Alinha no centro para permitir que o cartão de destaque cresça */
+}
+
+.card-pacote {
+    background-color: #15191f;
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(138, 153, 173, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Cartão em Destaque (Performance) */
+.card-pacote.destaque {
+    border-color: var(--ciano-neon);
+    background-color: #1a2028;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    transform: scale(1.05); /* Ligeiramente maior para sobressair */
+}
+
+.badge-pacote {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--slate-silver);
+    margin-bottom: 15px;
+}
+
+.badge-pacote.neon {
+    color: var(--ciano-neon);
+    font-weight: bold;
+}
+
+.card-pacote h3 {
+    font-size: 2rem;
+    color: var(--branco-puro);
+}
+
+.foco-pacote {
+    color: var(--ciano-neon);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.lista-vantagens {
+    list-style: none;
+    margin-bottom: 35px;
+    flex-grow: 1;
+}
+
+.lista-vantagens li {
+    color: var(--slate-silver);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lista-vantagens li i {
+    color: var(--ciano-neon);
+}
+
+.btn-pacote {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    border: 1px solid var(--slate-silver);
+    color: var(--branco-puro);
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn-pacote:hover {
+    border-color: var(--branco-puro);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* 9. SECÇÃO DE RESERVAS */
+#reservas {
+    padding: 100px 20px;
+    background-color: #15191f;
+}
+
+.formulario-reserva {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-duplo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formulario-reserva input,
+.formulario-reserva select,
+.formulario-reserva textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--preto-grafite);
+    border: 1px solid rgba(138, 153, 173, 0.2);
+    color: var(--branco-puro);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.formulario-reserva input:focus,
+.formulario-reserva select:focus,
+.formulario-reserva textarea:focus {
+    border-color: var(--ciano-neon);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 10. RODAPÉ (FOOTER) */
+footer {
+    background-color: var(--preto-grafite);
+    border-top: 1px solid rgba(138, 153, 173, 0.1);
+    padding-top: 60px;
+}
+
+.conteudo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.logo-footer {
+    height: 40px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.info-footer p {
+    color: var(--slate-silver);
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+
+.localizacao {
+    color: var(--ciano-neon);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.redes-footer h4 {
+    color: var(--branco-puro);
+    margin-bottom: 20px;
+}
+
+.links-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links-redes a {
+    color: var(--slate-silver);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.links-redes a:hover {
+    color: var(--ciano-neon);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background-color: #080a0c;
+    color: rgba(138, 153, 173, 0.5);
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVO PARA ECRÃS PEQUENOS */
+@media (max-width: 768px) {
+    .campo-duplo {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================
+   11. ADAPTAÇÃO PARA TELEMÓVEL (RESPONSIVO)
+   ========================================== */
+
+/* Bloqueia qualquer deslize para os lados indesejado */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Regras ativadas apenas em ecrãs com largura até 768px */
+@media (max-width: 768px) {
+
+    /* 1. Ajustes no Hero (Reduz o logótipo e o título para caberem no telemóvel) */
+    .logo-centro {
+        height: 100px !important; 
+        margin-bottom: 20px;
+    }
+
+    #hero h1 {
+        font-size: 2rem !important; 
+        line-height: 1.2;
+    }
+
+    #hero p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    /* 2. Reduzir as margens verticais das secções */
+    #infraestruturas,
+    #pacotes,
+    #reservas {
+        padding: 50px 15px !important;
+    }
+
+    .titulo-seccao {
+        font-size: 1.8rem !important;
+        margin-bottom: 30px;
+    }
+
+    /* 3. Faixa de Parceiros (Aproxima e encolhe os logótipos) */
+    #parceiros {
+        padding: 40px 15px;
+    }
+
+    .grelha-parceiros {
+        gap: 25px !important;
+    }
+
+    .logo-sponsor {
+        height: 28px !important;
+    }
+
+    /* 4. Pacotes (Remove o aumento do cartão de destaque para não cortar nas bordas) */
+    .card-pacote.destaque {
+        transform: scale(1) !important;
+    }
+
+    /* 5. Formulário e Rodapé */
+    .formulario-reserva {
+        padding: 0 5px;
+    }
+
+    .conteudo-footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .info-footer p {
+        margin: 0 auto 15px auto;
+    }
+
+    .localizacao {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS VILLA | High Performance Bootcamp</title>
+    
+    <!-- Importar as Fontes Oficiais do Manual -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Ligar o ficheiro de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- SECÇÃO HERO (Área Principal) -->
+   <!-- SECÇÃO HERO (Área Principal) -->
+    <section id="hero">
+        
+        <!-- Camada 1: As imagens do Carrossel a passar -->
+        <div class="slide bg-1"></div>
+        <div class="slide bg-2"></div>
+        <div class="slide bg-3"></div>
+
+        <!-- Camada 2: A película escura de contraste -->
+        <div class="bg-pelicula"></div>
+
+        <!-- Camada 3: O teu texto e logótipo (ficam por cima de tudo) -->
+        <div class="hero-conteudo">
+            <img src="logo-nexus.svg" alt="Símbolo NEXUS VILLA" class="logo-centro">
+            <h1>High Performance Bootcamp</h1>
+            <p>Refúgio residencial de alta performance para treino intensivo de Esports na Europa.</p>
+            <a href="#reservas" class="btn-neon">Ver Instalações</a>
+        </div>
+        
+    </section>
+    <!-- SECÇÃO DE PARCEIROS (Credibilidade B2B) -->
+    <section id="parceiros">
+        <h2>Equipamento Oficial & Parceiros</h2>
+        
+        <div class="grelha-parceiros">
+            <!-- Podes colocar aqui os logótipos das marcas reais mais tarde. Idealmente em formato SVG ou PNG com fundo transparente. -->
+            <img src="sponsor1.svg" alt="Parceiro 1" class="logo-sponsor">
+            <img src="sponsor2.svg" alt="Parceiro 2" class="logo-sponsor">
+            <img src="sponsor3.svg" alt="Parceiro 3" class="logo-sponsor">
+            <img src="sponsor4.svg" alt="Parceiro 4" class="logo-sponsor">
+            <img src="sponsor5.svg" alt="Parceiro 5" class="logo-sponsor">
+        </div>
+    </section>
+    <!-- SECÇÃO DE INFRAESTRUTURAS -->
+    <section id="infraestruturas">
+        <div class="container">
+            <h2 class="titulo-seccao">INFRAESTRUTURA & ESPAÇOS</h2>
+            
+            <div class="grelha-cards">
+                <!-- Cartão 1: Training Room -->
+                <div class="card">
+                    <i class="ph ph-desktop icon-codigo"></i>
+                    <h3>Training Room</h3>
+                    <p>Climatizada, tratamento acústico e setups de elite para foco total.</p>
+                </div>
+                
+                <!-- Cartão 2: Fibra Dedicada -->
+                <div class="card">
+                    <i class="ph ph-wifi-high icon-codigo"></i>
+                    <h3>Fibra Dedicada</h3>
+                    <p>Ligação redundante de alta velocidade garantindo zero latência.</p>
+                </div>
+                
+                <!-- Cartão 3: Sala VOD / Tática -->
+                <div class="card">
+                    <i class="ph ph-presentation-chart icon-codigo"></i>
+                    <h3>Sala VOD / Tática</h3>
+                    <p>Análise detalhada de jogo e sessões estratégicas de equipa.</p>
+                </div>
+                
+                <!-- Cartão 4: Chef Residente -->
+                <div class="card">
+                    <i class="ph ph-fork-knife icon-codigo"></i>
+                    <h3>Chef Residente</h3>
+                    <p>Nutrição desportiva planeada para a máxima performance do atleta.</p>
+                </div>
+
+                <!-- Cartão 5: Moradia 6 Quartos -->
+                <div class="card">
+                    <i class="ph ph-bed icon-codigo"></i>
+                    <h3>Moradia 6 Quartos</h3>
+                    <p>Capacidade para 6 a 8 elementos, climatização individual e contexto calmo.</p>
+                </div>
+
+                <!-- Cartão 6: Lazer & Piscina -->
+                <div class="card">
+                    <i class="ph ph-swimming-pool icon-codigo"></i>
+                    <h3>Lazer & Piscina</h3>
+                    <p>Áreas de descompressão em espaço aberto, essenciais para descanso mental e físico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECÇÃO DE PACOTES & PLANOS -->
+     
+    <section id="pacotes">
+        
+        <div class="container">
+            <h2 class="titulo-seccao">PLANOS & PACOTES</h2>
+            <p class="subtitulo-seccao">Soluções flexíveis ajustadas aos objetivos da tua equipa.</p>
+            
+            <div class="grelha-pacotes">
+                <!-- Pacote 1: Essential -->
+                <div class="card-pacote">
+
+                    <span class="badge-pacote">B2C / Lazer</span>
+                    <h3>ESSENTIAL</h3>
+                    <p class="foco-pacote">Amador & Fim de Semana</p>
+                    <ul class="lista-vantagens">
+                        <li><i class="ph ph-check"></i> Acesso à Training Room</li>
+                        <li><i class="ph ph-check"></i> Fibra Dedicada Redundante</li>
+                        <li><i class="ph ph-check"></i> Alojamento na Moradia</li>
+                        <li><i class="ph ph-check"></i> Zonas de Lazer & Piscina</li>
+                    </ul>
+                    <a href="#reservas" class="btn-pacote" data-plano="essential">Reservar Essential</a>
+                </div>
+
+                <!-- Pacote 2: Performance (Destaque) -->
+                <div class="card-pacote destaque">
+                    <span class="badge-pacote neon">Mais Popular</span>
+                    <h3>PERFORMANCE</h3>
+                    <p class="foco-pacote">Semi-Profissional</p>
+                    <ul class="lista-vantagens">
+                        <li><i class="ph ph-check"></i> Tudo do plano Essential</li>
+                        <li><i class="ph ph-check"></i> Acesso à Sala VOD / Tática</li>
+                        <li><i class="ph ph-check"></i> Pacote de Refeições Parcial</li>
+                        <li><i class="ph ph-check"></i> Suporte Técnico Local</li>
+                    </ul>
+                    <a href="#reservas" class="btn-neon" data-plano="performance">Reservar Performance</a>
+                </div>
+
+                <!-- Pacote 3: Elite -->
+                <div class="card-pacote">
+                    <span class="badge-pacote">B2B Pro</span>
+                    <h3>ELITE</h3>
+                    <p class="foco-pacote">Exclusividade Total</p>
+                    <ul class="lista-vantagens">
+                        <li><i class="ph ph-check"></i> Uso Exclusivo da Moradia</li>
+                        <li><i class="ph ph-check"></i> Chef Residente Dedicado</li>
+                        <li><i class="ph ph-check"></i> Plano Nutricional Desportivo</li>
+                        <li><i class="ph ph-check"></i> Privacidade Tática Total</li>
+                    </ul>
+                    <a href="#reservas" class="btn-pacote" data-plano="elite">Solicitar Proposta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reservas">
+        <div class="container">
+            <h2 class="titulo-seccao">RESERVA O TEU BOOTCAMP</h2>
+            <p class="subtitulo-seccao">Garante as datas para a tua equipa ou solicita uma proposta personalizada.</p>
+            
+            <form class="formulario-reserva" action="https://formsubmit.co/69971ef6949a9ce3ceca1054f43038cb" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="campo-duplo">
+                    <input type="text" placeholder="Nome Completo / Organização" required>
+                    <input type="email" placeholder="E-mail de Contacto" required>
+                </div>
+                
+                <div class="campo-duplo">
+                        <select id="plano-select" required>
+                            <option value="" disabled selected>Seleciona o Plano Pretendido</option>
+                            <option value="essential">Essential (Amador / Fim de Semana)</option>
+                            <option value="performance">Performance (Semi-Profissional)</option>
+                            <option value="elite">Elite (Exclusividade Total B2B)</option>
+                        </select>
+                    <input type="text" placeholder="Datas Pretendidas (Ex: 12-15 Nov)" required>
+                </div>
+
+                <textarea rows="5" placeholder="Mensagem / Necessidades Especiais de Hardware ou Nutrição"></textarea>
+                
+                <button type="submit" class="btn-neon btn-submit">Enviar Pedido de Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ (FOOTER) -->
+    <footer>
+        <div class="container conteudo-footer">
+            <div class="info-footer">
+                <img src="logo-nexus.svg" alt="NEXUS VILLA" class="logo-footer">
+                <p>Refúgio residencial de alta performance para treino intensivo de Esports.</p>
+                <span class="localizacao"><i class="ph ph-map-pin"></i> Região de Lisboa (Sintra / Mafra), Portugal</span>
+            </div>
+
+            <div class="redes-footer">
+                <h4>Comunidade & Redes</h4>
+                <div class="links-redes">
+                    <a href="#"><i class="ph ph-discord-logo"></i> Discord</a>
+                    <a href="#"><i class="ph ph-instagram-logo"></i> Instagram</a>
+                    <a href="#"><i class="ph ph-tiktok-logo"></i> TikTok</a>
+                    <a href="#"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 NEXUS VILLA. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+<!-- Script ultraleve para preencher o formulário ao clicar nos botões -->
+    <script>
+        const botoesPlano = document.querySelectorAll('[data-plano]');
+        const selectPlano = document.getElementById('plano-select');
+
+        botoesPlano.forEach(botao => {
+            botao.addEventListener('click', () => {
+                const planoEscolhido = botao.getAttribute('data-plano');
+                if (selectPlano) {
+                    selectPlano.value = planoEscolhido;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
