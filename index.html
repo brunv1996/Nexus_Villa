@@ -170,22 +170,23 @@
             
             <form class="formulario-reserva" action="https://formsubmit.co/69971ef6949a9ce3ceca1054f43038cb" method="POST">
                 <input type="hidden" name="_captcha" value="false">
+                
                 <div class="campo-duplo">
-                    <input type="text" placeholder="Nome Completo / Organização" required>
-                    <input type="email" placeholder="E-mail de Contacto" required>
+                    <input type="text" name="nome" placeholder="Nome Completo / Organização" aria-label="Nome Completo ou Organização" required>
+                    <input type="email" name="email" placeholder="E-mail de Contacto" aria-label="E-mail de Contacto" required>
                 </div>
                 
                 <div class="campo-duplo">
-                        <select id="plano-select" required>
-                            <option value="" disabled selected>Seleciona o Plano Pretendido</option>
-                            <option value="essential">Essential (Amador / Fim de Semana)</option>
-                            <option value="performance">Performance (Semi-Profissional)</option>
-                            <option value="elite">Elite (Exclusividade Total B2B)</option>
-                        </select>
-                    <input type="text" placeholder="Datas Pretendidas (Ex: 12-15 Nov)" required>
+                    <select id="plano-select" name="plano" aria-label="Seleciona o Plano Pretendido" required>
+                        <option value="" disabled selected>Seleciona o Plano Pretendido</option>
+                        <option value="essential">Essential (Amador / Fim de Semana)</option>
+                        <option value="performance">Performance (Semi-Profissional)</option>
+                        <option value="elite">Elite (Exclusividade Total B2B)</option>
+                    </select>
+                    <input type="text" name="datas" placeholder="Datas Pretendidas (Ex: 12-15 Nov)" aria-label="Datas Pretendidas" required>
                 </div>
 
-                <textarea rows="5" placeholder="Mensagem / Necessidades Especiais de Hardware ou Nutrição"></textarea>
+                <textarea name="mensagem" rows="5" placeholder="Mensagem / Necessidades Especiais de Hardware ou Nutrição" aria-label="Mensagem ou Necessidades Especiais"></textarea>
                 
                 <button type="submit" class="btn-neon btn-submit">Enviar Pedido de Reserva</button>
             </form>

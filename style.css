@@ -6,7 +6,7 @@ html {
     --ciano-neon: #00F0FF;
     --roxo-neon: #BF00FF;
     --branco-puro: #FFFFFF;
-    --slate-silver: #8A99AD;
+    --slate-silver: #A0B0C0; /* Ajustado de #8A99AD para garantir o contraste WCAG AA */
     --preto-grafite: #0F1216;
 }
 
