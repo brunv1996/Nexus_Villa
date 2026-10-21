@@ -564,3 +564,379 @@ html, body {
         justify-content: center;
     }
 }
+
+/* ==========================================
+   ESTILOS DAS INSTALAÇÕES & GALERIA
+   ========================================== */
+
+.pagina-header {
+    padding: 140px 0 60px 0;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(15,18,22,0.9) 0%, var(--preto-grafite) 100%);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.pagina-header h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.8rem;
+    color: var(--branco-puro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pagina-header p {
+    color: var(--slate-silver);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Filtros */
+.filtros-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 40px 0 30px 0;
+}
+
+.btn-filtro {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(160, 176, 192, 0.2);
+    color: var(--slate-silver);
+    padding: 10px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover, .btn-filtro.active {
+    background: var(--ciano-neon);
+    color: var(--preto-grafite);
+    border-color: var(--ciano-neon);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+/* Grelha da Galeria */
+.grelha-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.item-galeria {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 260px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.item-galeria:hover img {
+    transform: scale(1.08);
+}
+
+.overlay-galeria {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(15,18,22,0.95) 0%, rgba(15,18,22,0.3) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.item-galeria:hover .overlay-galeria {
+    opacity: 1;
+}
+
+.overlay-galeria h3 {
+    color: var(--ciano-neon);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+}
+
+.overlay-galeria p {
+    color: var(--branco-puro);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.overlay-galeria i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: var(--ciano-neon);
+}
+
+/* Ficha Técnica / Specs */
+.seccao-specs {
+    background: #14181E;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grelha-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-spec {
+    background: var(--preto-grafite);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(160, 176, 192, 0.15);
+    transition: border-color 0.3s ease;
+}
+
+.card-spec:hover {
+    border-color: var(--roxo-neon);
+}
+
+.icon-spec {
+    font-size: 2.5rem;
+    color: var(--roxo-neon);
+    margin-bottom: 15px;
+}
+
+.card-spec h3 {
+    color: var(--branco-puro);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.card-spec ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-spec li {
+    color: var(--slate-silver);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.card-spec li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--ciano-neon);
+}
+
+/* Lightbox Modal */
+.modal-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background-color: rgba(15, 18, 22, 0.95);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.conteudo-modal {
+    max-width: 85%;
+    max-height: 75vh;
+    border-radius: 6px;
+    border: 2px solid var(--ciano-neon);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.legenda-modal {
+    color: var(--branco-puro);
+    margin-top: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: var(--branco-puro);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fechar-modal:hover {
+    color: var(--ciano-neon);
+}
+
+/* ==========================================
+   CABEÇALHO E NAVEGAÇÃO (HEADER)
+   ========================================== */
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 18, 22, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav-logo {
+    height: 38px;
+    width: auto;
+}
+
+.logo-texto {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--branco-puro);
+    letter-spacing: 2px;
+}
+
+.logo-texto span {
+    color: var(--ciano-neon);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Reset às cores azuis/roxas dos links */
+.nav-menu a {
+    text-decoration: none;
+    color: var(--slate-silver);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-menu a:visited {
+    color: var(--slate-silver);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--ciano-neon);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* Botão de Destaque "Reservar" */
+.btn-nav {
+    background: transparent;
+    color: var(--ciano-neon) !important;
+    border: 1px solid var(--ciano-neon);
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease !important;
+}
+
+.btn-nav:hover {
+    background: var(--ciano-neon);
+    color: var(--preto-grafite) !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    text-shadow: none !important;
+}
+
+/* Alinhamento Milimétrico do Logótipo */
+.logo-link {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os centros do ícone e do texto */
+    gap: 14px;
+    text-decoration: none;
+}
+
+.nav-logo {
+    margin-top: 10px;
+    height: 44px; /* Altura proporcional ao tamanho do texto */
+    width: auto;
+    display: block; /* Remove espaçamentos fantasma de elementos inline */
+}
+
+.logo-texto {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--branco-puro);
+    letter-spacing: 2px;
+    line-height: 1; /* Remove margens superiores e inferiores da caixa de texto */
+    margin: 0;
+}
+
+.logo-texto span {
+    color: var(--ciano-neon);
+}
+
+/* Forçar o botão a ocupar todas as colunas da grelha */
+.cta-centralizado {
+    grid-column: 1 / -1; /* Ocupa da 1ª até à última coluna */
+    width: 100%;
+    margin-top: 25px;
+}
+
+.btn-cta-instalacoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 18px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px solid var(--ciano-neon);
+    color: var(--ciano-neon);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-instalacoes:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Compensa a altura do cabeçalho fixo para a secção não ficar tapada pelo menu */
+    scroll-padding-top: 90px; 
+}
