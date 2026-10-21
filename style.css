@@ -56,10 +56,10 @@ h1, h2, h3, .logo {
     z-index: 1; /* Ficam na camada de trás */
 }
 
-/* Ligar cada slide à sua fotografia e definir o atraso (quando entram em cena) */
-.bg-1 { background-image: url('foto1.jpg'); animation-delay: 0s; }
-.bg-2 { background-image: url('foto2.jpg'); animation-delay: 5s; }
-.bg-3 { background-image: url('foto3.jpg'); animation-delay: 10s; }
+/* Ligar cada slide às novas imagens comprimidas WebP */
+.bg-1 { background-image: url('foto1.webp'); animation-delay: 0s; }
+.bg-2 { background-image: url('foto2.webp'); animation-delay: 5s; }
+.bg-3 { background-image: url('foto3.webp'); animation-delay: 10s; }
 
 /* A regra matemática da animação de transparência */
 @keyframes fadeCarrossel {
